@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Trang chủ</title>
+<meta charset="utf-8" >
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<link rel="icon" th:href="@{/images/favicon.ico}"
+	type="image/x-icon" />
+<!-- Google font-->
+<link
+	th:href="@{https://fonts.googleapis.com/css?family=Open+Sans:400,600}"
+	rel="stylesheet" />
+<!-- Required Fremwork -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" >
+<link rel="stylesheet" type="text/css"
+	th:href="@{/plugins/font-awesome/css/font-awesome.min.css}" >
+<!-- themify-icons line icon -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/icon/themify-icons/themify-icons.css}" >
+<!-- ico font -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/icon/icofont/css/icofont.css}" >
+<!-- feather Awesome -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/icon/feather/css/feather.css}" >
+<!-- Style.css -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/jquery.mCustomScrollbar.css}" >
+
+<link rel="stylesheet"
+	th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/cssTrangChu/style.css}">
+</head>
+
+<body>
+	<div id="pcoded" class="pcoded">
+		<div class="pcoded-overlay-box"></div>
+		<div class="pcoded-container navbar-wrapper">
+
+			<div th:replace="fragments/navbar"></div>
+			<div class="pcoded-main-container">
+				<div class="pcoded-wrapper">
+					<div th:replace="fragments/sidebar"></div>
+					<div class="pcoded-content">
+						<div class="pcoded-inner-content">
+							<!-- Main-body start -->
+							<section layout:fragment="content"></section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/plugins/jquery/js/jquery.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/plugins/jquery-ui/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/plugins/popper.js/js/popper.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script>
+	<!-- jquery slimscroll js -->
+	<script type="text/javascript"
+		th:src="@{/plugins/jquery-slimscroll/js/jquery.slimscroll.js} "></script>
+	<!-- modernizr js -->
+	<script type="text/javascript"
+		th:src="@{/plugins/modernizr/js/modernizr.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/plugins/modernizr/js/css-scrollbars.js}"></script>
+	<script th:src="@{/js/pcoded.min.js}"></script>
+	<script th:src="@{/js/vartical-layout.min.js}"></script>
+	<script th:src="@{/js/jquery.mCustomScrollbar.concat.min.js}"></script>
+	<!-- Custom js -->
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+	<script th:src="@{//cdn.ckeditor.com/4.11.4/full/ckeditor.js}"></script>
+	<script
+		th:src="@{http://cdn.ckeditor.com/4.4.7/standard-all/adapters/jquery.js}"></script>
+
+	<script th:src="@{/jsTrangChu/chart.min.js}"></script>
+	<script th:src="@{/jsTrangChu/custom-chart.js}"></script>
+	
+</body>
+
+</html>

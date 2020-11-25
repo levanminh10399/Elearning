@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/defualt">
+<head>
+<meta charset="UTF-8">
+<title>Cập nhật user</title>
+
+</head>
+<body>
+	<div class="main-body" layout:fragment="content">
+		<div class="page-body">
+			<div class="row">
+				<div class="col-md-12 mb-2">
+					<div class="page-header-breadcrumb">
+						<ul class="breadcrumb-title">
+							<li class="breadcrumb-item"><a href="/admin"> <i
+									class="feather icon-home"></i> Trang chủ
+							</a></li>
+							<li class="breadcrumb-item"><a href="#!">Cập nhật tài
+									khoản</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="text-uppercase text-center">cập nhật tài khoản</h2>
+						</div>
+						<div class="card-block">
+							<form th:action="@{/user/edit}" method="post" th:object="${user}">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Mã tài khoản</label> <input readonly="readonly"
+												type="text" th:field="*{id}" class="form-control" />
+										</div>
+										<div class="form-group">
+											<label>Họ tên</label> <input type="text" 
+												class="form-control" th:field="*{fullname}"/>
+										</div>
+										<div class="form-group">
+											<label>Email</label> <input type="text"
+												class="form-control" th:field = "*{email}" />
+										</div>
+										<div class="form-group">
+											<label>Mật khẩu</label> <input type="password"
+												th:field="*{password}" class="form-control" />
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Điện thoại</label> <input type="text" th:field="*{phone}"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label>Địa chỉ</label> <input type="text" th:field="*{address}"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label>Avatar</label> <input type="file" th:field="*{avatar}"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label>Loại người dùng</label> <select th:field = "*{role_id}"
+												class="form-control">
+												<option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.description}"></option>
+											</select>
+										</div>
+									</div>
+									<div class="col-12 mt-3">
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary m-b-0">Lưu
+												lại</button>
+											<a th:href="@{/user}" class="btn btn-secondary text-white">Quay lại</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
